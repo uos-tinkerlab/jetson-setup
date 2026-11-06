@@ -1,0 +1,49 @@
+# General Python packages for the shared Jetson base environment.
+#
+# The GPU builds (torch, torchvision, torchaudio, onnxruntime-gpu, tensorflow)
+# are added by JETSON-PYTHON-SETUP.sh to match the JetPack version, so don't
+# list them here.
+#
+# Before adding a package, check it doesn't pull in CPU-only "onnxruntime"
+# (clashes with onnxruntime-gpu) or "opencv-python" (shadows JetPack's OpenCV,
+# which is the one with GStreamer support for CSI cameras).
+
+# Hugging Face
+transformers
+accelerate
+datasets
+safetensors
+tokenizers
+huggingface_hub
+sentence-transformers
+timm
+
+# Keras 3 (tensorflow / torch backends)
+keras
+
+# LLMs: LangChain + Ollama
+ollama
+langchain
+langchain-core
+langchain-community
+langchain-ollama
+langchain-huggingface
+langchain-text-splitters
+faiss-cpu
+
+# ONNX model export / inspection
+onnx
+
+# Data science
+numpy
+scipy
+pandas
+scikit-learn
+matplotlib
+pillow
+tqdm
+
+# Notebooks
+jupyterlab
+ipykernel
+ipywidgets
